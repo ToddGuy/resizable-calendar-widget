@@ -1,0 +1,152 @@
+#calendar-container {
+  display: flex;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+#calendar-header {
+  text-align: center;
+  font-size: 10px;
+}
+
+.calendar-day:hover {
+  cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 499px) {
+  #calendar-container {
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+  }
+
+  #calendar-header {
+    height: 30px;
+    color:#0d8cb2;
+  }
+
+  #calendar-header h1 {
+    margin: 0;
+  }
+
+  #calendar-weekdays-weekends {
+    display: none;
+  }
+
+  .calendar-day {
+    margin-bottom: 2px;
+    height: 30px;
+  }
+
+  .calendar-day .day-block {
+    color: white;
+    background: #0d8cb2;
+
+    display: inline-flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    text-align: center;
+    font-size: xx-small;
+    width: 20px;
+    height: 100%;
+  }
+
+  .calendar-day:nth-child(even) {
+    background: #eeeeee;
+  }
+
+  .calendar-day:nth-child(odd) {
+    background: #d5d5d5;
+  }
+
+  .hidden-day {
+    display: none;
+  }
+}
+
+/* Desktop */
+@media (min-width: 500px) {
+  #calendar-container {
+    flex-flow: row wrap;
+    align-content: flex-start;
+    height: 360px;
+    background: #b6ecec;
+    min-width: 600px;
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+  #calendar-header {
+    background: #008bb4;
+    color: white;
+    flex: 0 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    height: 40px;
+  }
+
+  #calendar-header h1 {
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+
+  #calendar-weekdays-weekends {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    flex: 0 100%;
+    margin-bottom: 14px;
+  }
+
+  #calendar-weekdays-weekends div {
+    text-align: center;
+    flex: 0 0 13%;
+    margin: 0 3px 0 3px;
+    font-size: 12px;
+    color: white;
+    background: #008bb4;
+  }
+
+  #calendar-days {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    flex: 0 100%;
+  }
+
+  #calendar-days > div {
+    flex: 0 13%;
+    margin: 0 3px 8px 3px;
+    height: 35px;
+  }
+
+  .calendar-day {
+    background: white;
+    font-size: 12px;
+    text-align: right;
+  }
+
+  #calendar-days .calendar-day .day-block {
+    color: white;
+
+    margin: 0;
+    display: inline-flex;
+    justify-content: center;
+    width: 20%;
+  }
+
+  .other-day {
+    background: #6bb9d2;
+    height: auto;
+  }
+
+  .current-day {
+    background: #008bb4;
+    height: 100%;
+    font-size: x-large;
+  }
+
+  .hidden-day {
+    background: inherit;
+  }
+}
+
+
