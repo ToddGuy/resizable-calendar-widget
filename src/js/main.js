@@ -2,6 +2,7 @@
   const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
   const div = document.createElement('div');
+  const header = document.createElement('h1');
 
   const calendarWeekdaysWeekendsDiv = document.getElementById('calendar-weekdays-weekends');
 
@@ -12,15 +13,12 @@
   });
 
   const curDate = new Date();
-  const refCurDate = new Date(curDate).getDate();
+  const refCurDate = new Date(curDate).getDate(); //to reference the current date
 
+  const monthYearHeader = header.cloneNode();
+  monthYearHeader.innerText = `${new Intl.DateTimeFormat('en-US', {month: 'long'}).format(curDate)} ${curDate.getFullYear()}`;
 
-  const list = document.getElementById('calendar-header').querySelectorAll('h1');
-  console.log(list);
-
-  for (let item of Array.from(list)) {
-    item.innerText += ' ' + curDate.getFullYear();
-  }
+  document.getElementById('calendar-header').appendChild(monthYearHeader);
 
 
   curDate.setDate(1);
